@@ -1,0 +1,39 @@
+{   
+    "manifest_version": 3,
+    "name": "Climaware",
+    "description": "An extension for people to stay aware of the climate change crisis.",
+    "version": "1.0",
+
+    "icons": {
+      "128": "earthimg.png",
+      "48": "earthimg.png",
+      "16": "earthimg.png"
+    },
+
+    "action": {
+      "default_popup": "html/popup.html"
+    },
+
+    "background": {
+      "service_worker": "js/background.js"
+    },
+
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": [ "js/content.js" ]
+      }
+     ],
+
+    "options_page": "html/options.html",
+
+    "permissions": [
+      "tabs",
+      "activeTab",
+      "scripting"
+    ],
+
+    "host_permissions": [
+      "<all_urls>"
+    ]
+  }
